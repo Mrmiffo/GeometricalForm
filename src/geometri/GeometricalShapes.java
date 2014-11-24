@@ -12,6 +12,7 @@ public abstract class GeometricalShapes implements GeometricalForm {
 	/**
 	 * xCoord is the x coordinate of the GeometricalShape.
 	 */
+	protect int buttinthefuck;
 	protected int xCoord;
 	/**
 	 * yCoord is the y coordinate of the GeometricalShape.
