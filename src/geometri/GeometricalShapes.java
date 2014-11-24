@@ -3,6 +3,11 @@ package geometri;
 import java.awt.Color;
 import java.awt.Graphics;
 
+/**
+ * Lab 2 Part 1. Headers for all classes, methods and variables. 
+ * @author Anton Strandman && Maxim Goretskyy
+ *
+ */
 public abstract class GeometricalShapes implements GeometricalForm {
 	/**
 	 * xCoord is the x coordinate of the GeometricalShape.
