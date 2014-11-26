@@ -14,7 +14,7 @@ public class Square extends GeometricalShapes{
 	 * @throws IllegalPositionException Is thrown if any of the X or Y coordinates are negative.
 	 */
 	public Square(int x, int y, int side, Color c) throws IllegalPositionException{
-		
+		super(x,y,side,side,c);
 	}
 	/**
 	 * Creates a square at the same position as another GeometrialForm.
@@ -23,7 +23,7 @@ public class Square extends GeometricalShapes{
 	 * @param c Color of the square.
 	 */
 	public Square(GeometricalForm f, int side, Color c){
-		
+		super(f.getX(), f.getY(), side, side, c);
 	}
 
 	
@@ -54,7 +54,8 @@ public class Square extends GeometricalShapes{
 	}
 	@Override
 	public void fill(Graphics g) {
-		// TODO Auto-generated method stub
+		g.setColor(getColor());
+		g.fillRect(getX(), getY(), getWidth(), getHeight());
 		
 	}
 	@Override
