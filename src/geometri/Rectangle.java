@@ -15,7 +15,7 @@ public class Rectangle extends GeometricalShapes{
 	 * @throws IllegalPositionException Is thrown if any of the X or Y coordinates are negative.
 	 */
 	public Rectangle(int x, int y, int width, int height, Color c) throws IllegalPositionException{
-		
+		super(x,y,width,height,c);
 	}
 	/**
 	 * Create a rectangle at the same place as another geometricalForm.
@@ -25,7 +25,7 @@ public class Rectangle extends GeometricalShapes{
 	 * @param c Color of the rectangle.
 	 */
 	public Rectangle(GeometricalForm f, int width, int height, Color c){
-		
+		super(f.getX(), f.getY(), width, height, c);
 	}
 	
 	/** 
@@ -54,7 +54,8 @@ public class Rectangle extends GeometricalShapes{
 	}
 	@Override
 	public void fill(Graphics g) {
-		// TODO Auto-generated method stub
+		g.setColor(getColor());
+		g.fillRect(getX(), getY(), getWidth(), getHeight());
 		
 	}
 	@Override

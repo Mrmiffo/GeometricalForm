@@ -38,8 +38,12 @@ public abstract class GeometricalShapes implements GeometricalForm {
 	 * @param height
 	 * @param color
 	 */
-	protected GeometricalShapes(int xCoord, int yCoord, int width, int height, Color color){
-		
+	protected GeometricalShapes(int xCoord, int yCoord, int width, int height, Color color) throws IllegalPositionException{
+		this.xCoord = xCoord;
+		this.yCoord = yCoord;
+		this.width = width;
+		this.height = height;
+		this.color = new Color(color.getRed(),color.getGreen(),color.getBlue());
 	}
 	/**
 	 * {@inheritDoc}
