@@ -16,6 +16,7 @@ public class Oval extends GeometricalShapes{
 	
 	private final double PI_CONSTANT = 3.14;
 	public Oval(int x, int y, int width, int height, Color c) throws IllegalPositionException{
+		super(x,y,width,height,c);
 		
 	}
 	/**
@@ -26,7 +27,7 @@ public class Oval extends GeometricalShapes{
 	 * @param c COlor of the oval.
 	 */
 	public Oval(GeometricalForm f, int width, int height, Color c){
-		
+		super(f,width,height,c);
 	}
 
 	/** 
