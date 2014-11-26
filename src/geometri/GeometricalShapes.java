@@ -57,6 +57,10 @@ public abstract class GeometricalShapes implements GeometricalForm {
 		this.height = height;
 		this.color = new Color(color.getRed(),color.getGreen(),color.getBlue());
 	}
+	
+	public GeometricalShapes(){
+		
+	}
 	/**
 	 * {@inheritDoc}
 	 */
