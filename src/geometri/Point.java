@@ -12,7 +12,7 @@ public class Point extends GeometricalShapes{
 	 * @throws IllegalPositionException Thrown if the X or Y coordinates are negative.
 	 */
 	public Point(int x, int y, Color c) throws IllegalPositionException{
-		
+		super(x,y,0,0,c);
 	}
 	/**
 	 * Creates a point at the same place as another GeometricalForm.
@@ -20,6 +20,7 @@ public class Point extends GeometricalShapes{
 	 * @param c The color of the point.
 	 */
 	public Point(GeometricalForm f, Color c){
+		super(f,0,0,c);
 		
 	}
 	
@@ -30,7 +31,16 @@ public class Point extends GeometricalShapes{
 	 */
 	@Override
 	public boolean equals(Object o){
-		return false;
+		if (o == this){
+			return true;
+		} else if (o == null){
+			return false;
+		} else if (o.getClass() == this.getClass()) {
+			Point temp = (Point)o;
+			return 	(temp.getX() == this.getX() && temp.getY() == temp.getY());
+		} else {
+			return false;
+		}
 		
 	}
 	@Override
@@ -39,7 +49,8 @@ public class Point extends GeometricalShapes{
 	}
 	@Override
 	public void fill(Graphics g) {
-		// TODO Auto-generated method stub
+		g.setColor(getColor());
+		g.fillRect(getX(), getY(), getWidth(), getHeight());
 		
 	}
 	@Override
