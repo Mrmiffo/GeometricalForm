@@ -57,8 +57,8 @@ public class Oval extends GeometricalShapes{
 	}
 	@Override
 	public void fill(Graphics g) {
-		// TODO Auto-generated method stub
-		
+		g.setColor(getColor());
+		g.fillOval(getX(), getY(), getWidth(), getHeight());
 	}
 	@Override
 	public int getPerimeter() {

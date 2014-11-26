@@ -17,7 +17,7 @@ public class Circle extends GeometricalShapes {
 	
 
 	public Circle(int x, int y, int diameter, Color c) throws IllegalPositionException{
-		
+		super(x,y,diameter,diameter,c);
 	}
 	 
 	/**
@@ -27,7 +27,7 @@ public class Circle extends GeometricalShapes {
 	 * @param c Color of the circle.
 	 */
 	public Circle(GeometricalForm f, int diameter, Color c){
-		 
+		 super(f,diameter,diameter,c);
 	}
 	
 	/** 
@@ -58,8 +58,8 @@ public class Circle extends GeometricalShapes {
 
 	@Override
 	public void fill(Graphics g) {
-		// TODO Auto-generated method stub
-		
+		g.setColor(getColor());
+		g.fillOval(getX(), getY(), getWidth(), getHeight());
 	}
 
 	@Override
