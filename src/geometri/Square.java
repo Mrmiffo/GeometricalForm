@@ -41,9 +41,7 @@ public class Square extends GeometricalShapes{
 			return false;
 		} else if (o.getClass() == this.getClass()) {
 			Square temp = (Square)o;
-			return 	(temp.getHeight() == this.getHeight() && temp.getWidth() == this.getWidth()) 
-					|| 
-					(temp.getHeight() == this.getWidth() && temp.getWidth() == this.getHeight());
+			return 	(temp.getHeight() == this.getHeight() && temp.getWidth() == this.getWidth());
 		} else {
 			return false;
 		}
@@ -61,7 +59,7 @@ public class Square extends GeometricalShapes{
 	}
 	@Override
 	public int getPerimeter() {
-		return 2 * (getWidth() * getHeight());
+		return 2 * (getWidth() + getHeight());
 	}
 
 }

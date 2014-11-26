@@ -60,6 +60,6 @@ public class Rectangle extends GeometricalShapes{
 	}
 	@Override
 	public int getPerimeter() {
-		return 2 * (getWidth() * getHeight());
+		return 2 * (getWidth() + getHeight());
 	}
 }

@@ -45,11 +45,6 @@ private int x1, y1, x2, y2;
 	 */
 	public Line(GeometricalForm f1, GeometricalForm f2, Color c) {
 		super(f1, f2, c);
-//		xCoord = f1.getX();
-//		yCoord = f1.getY();
-//		width = f2.getX() - f1.getX();
-//		height = f2.getY() - f1.getY();
-//		color = c;
 	}
 
 	/**
