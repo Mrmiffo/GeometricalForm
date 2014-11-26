@@ -42,7 +42,7 @@ public class Circle extends GeometricalShapes {
 	@Override
 	public int getArea() {
 		
-		return (diameter*diameter*PI_CONSTANT)/4.0;
+		return int((diameter*diameter*PI_CONSTANT)/4.0);
 	}
 
 	@Override
@@ -54,6 +54,6 @@ public class Circle extends GeometricalShapes {
 	@Override
 	public int getPerimeter() {
 		
-		return diameter*PI_CONSTANT;
+		return int(diameter*PI_CONSTANT);
 	}
 }
