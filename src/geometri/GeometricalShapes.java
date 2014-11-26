@@ -12,23 +12,23 @@ public abstract class GeometricalShapes implements GeometricalForm {
 	/**
 	 * xCoord is the x coordinate of the GeometricalShape.
 	 */
-	protected int xCoord;
+	private int xCoord;
 	/**
 	 * yCoord is the y coordinate of the GeometricalShape.
 	 */
-	protected int yCoord;
+	private int yCoord;
 	/**
 	 * The width of the GeometricalShape.
 	 */
-	protected int width;
+	private int width;
 	/**
 	 * The height of the GeometricalShape.
 	 */
-	protected int height;
+	private int height;
 	/**
 	 * The color of the GeometricalShape.
 	 */
-	protected Color color;
+	private Color color;
 	
 	/**
 	 * Constructor to set the protected variables xCoord, yCoord, width, height and color.
@@ -58,7 +58,10 @@ public abstract class GeometricalShapes implements GeometricalForm {
 		this.color = new Color(color.getRed(),color.getGreen(),color.getBlue());
 	}
 	
-	public GeometricalShapes(){
+	public GeometricalShapes(GeometricalForm f1, GeometricalForm f2, Color color){
+		width = Math.abs(f1.getX()-f1.getX());
+		height = Math.abs(f1.getY()-f1.getY());
+		
 		
 	}
 	/**

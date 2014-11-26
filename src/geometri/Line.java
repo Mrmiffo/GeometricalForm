@@ -8,7 +8,7 @@ public class Line extends GeometricalShapes {
 	 * gradientLine is set to an int to avoid issues which might occur with
 	 * accuracy when using double.
 	 */
-
+private int x1, y1, x2, y2;
 	/**
 	 * Creates a line between two coordinates.
 	 * 
@@ -27,8 +27,13 @@ public class Line extends GeometricalShapes {
 	 */
 	public Line(int x1, int y1, int x2, int y2, Color c)
 			throws IllegalPositionException {
-		super(x1, y1, x2 - x1, y2 - y1, c);
 		
+		
+		super(Math.min(x1, x2), Math.min(y1, y2), Math.abs(x2 - x1), Math.abs(y2 - y1), c);
+		this.x1 = x1;
+		this.y1 = y1;
+		this.x2 = x2;
+		this.y2 = y2;
 	}
 
 	/**
@@ -39,12 +44,12 @@ public class Line extends GeometricalShapes {
 	 * @param c
 	 */
 	public Line(GeometricalForm f1, GeometricalForm f2, Color c) {
-		super();
-		xCoord = f1.getX();
-		yCoord = f1.getY();
-		width = f2.getX() - f1.getX();
-		height = f2.getY() - f1.getY();
-		color = c;
+		super(f1, f2, c);
+//		xCoord = f1.getX();
+//		yCoord = f1.getY();
+//		width = f2.getX() - f1.getX();
+//		height = f2.getY() - f1.getY();
+//		color = c;
 	}
 
 	/**
@@ -89,12 +94,13 @@ public class Line extends GeometricalShapes {
 
 	@Override
 	public void fill(Graphics g) {
-		// TODO Auto-generated method stub
+		g.setColor(getColor());
+		g.drawLine(x1,y1, x2,y2);
 
 	}
 
 	@Override
 	public int getPerimeter() {
-		return (int) (Math.sqrt(width * width + height * height));
+		return (int) (Math.sqrt(getWidth() * getWidth() + getHeight() * getHeight()));
 	}
 }
