@@ -35,7 +35,6 @@ public class Point extends GeometricalShapes{
 	}
 	@Override
 	public int getArea() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 	@Override
@@ -45,7 +44,6 @@ public class Point extends GeometricalShapes{
 	}
 	@Override
 	public int getPerimeter() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 }

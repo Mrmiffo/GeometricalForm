@@ -18,8 +18,8 @@ public class Line extends GeometricalShapes{
 	 * @throws IllegalPositionException Is thrown 
 	 */
 	public Line(int x1, int y1, int x2, int y2, Color c) throws IllegalPositionException{
-		
-		   
+		width = (x2-x1);
+		height = (y2-y1);
 	}
 	/**
 	 * Creates 
@@ -35,8 +35,14 @@ public class Line extends GeometricalShapes{
 	 * Will return the gradient of the line as an int.
 	 * @return The gradient of the line as an int.
 	 */
+	public boolean isSlopePos(){
+		if(getGradient() >= 0){
+			return true;
+		}
+		return false;
+	}
 	public int getGradient(){
-		return gradientLine;
+		return (int)(height/width);
 		
 	}
 	
@@ -47,12 +53,13 @@ public class Line extends GeometricalShapes{
 	 */
 	@Override
 	public boolean equals(Object o){
+		
 		return false;
 		
 	}
 	@Override
 	public int getArea() {
-		// TODO Auto-generated method stub
+		
 		return 0;
 	}
 	@Override
@@ -62,7 +69,6 @@ public class Line extends GeometricalShapes{
 	}
 	@Override
 	public int getPerimeter() {
-		// TODO Auto-generated method stub
-		return 0;
+		return (int)(Math.sqrt(width*width+height*height));
 	}
 }

@@ -14,6 +14,8 @@ public class Circle extends GeometricalShapes {
 	 * @param c Color of the circle.
 	 * @throws IllegalPositionException Is thrown if any of the coordinates X or Y are negative.
 	 */
+	
+
 	public Circle(int x, int y, int diameter, Color c) throws IllegalPositionException{
 		
 	}
@@ -35,14 +37,23 @@ public class Circle extends GeometricalShapes {
 	 */
 	@Override
 	public boolean equals(Object o){
-		return false;
+		if (o == this){
+			return true;
+		} else if (o == null){
+			return false;
+		} else if (o.getClass() == this.getClass()) {
+			Circle temp = (Circle)o;
+			return 	(temp.getHeight() == this.getHeight());
+		} else {
+			return false;
+		}
 		
 	}
 
 	@Override
 	public int getArea() {
 		
-		return int((diameter*diameter*PI_CONSTANT)/4.0);
+		return (int)((getHeight()*getHeight()*PI_CONSTANT)/4.0);
 	}
 
 	@Override
@@ -54,6 +65,6 @@ public class Circle extends GeometricalShapes {
 	@Override
 	public int getPerimeter() {
 		
-		return int(diameter*PI_CONSTANT);
+		return (int)(getHeight()*PI_CONSTANT);
 	}
 }
