@@ -41,6 +41,8 @@ public class Line extends GeometricalShapes{
 		}
 		return false;
 	}
+	
+	
 	public int getGradient(){
 		return (int)(height/width);
 		
@@ -53,8 +55,16 @@ public class Line extends GeometricalShapes{
 	 */
 	@Override
 	public boolean equals(Object o){
-		
-		return false;
+		if (o == this){
+			return true;
+		} else if (o == null){
+			return false;
+		} else if (o.getClass() == this.getClass()) {
+			Line temp = (Line)o;
+			return 	(temp.getGradient() == this.getGradient() && temp.getPerimeter() == this.getPerimeter());
+		} else {
+			return false;
+		}
 		
 	}
 	@Override
