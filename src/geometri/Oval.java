@@ -13,6 +13,8 @@ public class Oval extends GeometricalShapes{
 	 * @param c Color of the oval.
 	 * @throws IllegalPositionException Is thrown if any of the X or Y coordinates are negative.
 	 */
+	
+	private final double PI_CONSTANT = 3.14;
 	public Oval(int x, int y, int width, int height, Color c) throws IllegalPositionException{
 		
 	}
@@ -34,13 +36,24 @@ public class Oval extends GeometricalShapes{
 	 */
 	@Override
 	public boolean equals(Object o){
-		return false;
+		if (o == this){
+			return true;
+		} else if (o == null){
+			return false;
+		} else if (o.getClass() == this.getClass()) {
+			Oval temp = (Oval)o;
+			return 	(temp.getHeight() == this.getHeight() && temp.getWidth() == this.getWidth()) 
+					|| 
+					(temp.getHeight() == this.getWidth() && temp.getWidth() == this.getHeight());
+		} else {
+			return false;
+		}
 		
 	}
 	@Override
 	public int getArea() {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		return (int) (PI_CONSTANT*(getWidth()/2.0)*(getHeight()/2.0));
 	}
 	@Override
 	public void fill(Graphics g) {
@@ -49,7 +62,7 @@ public class Oval extends GeometricalShapes{
 	}
 	@Override
 	public int getPerimeter() {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		return (int)(PI_CONSTANT*(3*(getWidth()/2.0 + getHeight()/2.0)-Math.sqrt((3*(getWidth()/2.0+getHeight()/2.0)*(getWidth()/2.0+3*(getHeight()/2.0))))));
 	}
 }
