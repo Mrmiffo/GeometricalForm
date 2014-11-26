@@ -39,8 +39,20 @@ public abstract class GeometricalShapes implements GeometricalForm {
 	 * @param color
 	 */
 	protected GeometricalShapes(int xCoord, int yCoord, int width, int height, Color color) throws IllegalPositionException{
-		this.xCoord = xCoord;
-		this.yCoord = yCoord;
+		if (xCoord < 0 || yCoord < 0){
+			throw new IllegalPositionException("X or Y coordinates are less than 0");
+		} else {
+			this.xCoord = xCoord;
+			this.yCoord = yCoord;
+			this.width = width;
+			this.height = height;
+			this.color = new Color(color.getRed(),color.getGreen(),color.getBlue());
+		}
+	}
+	
+	protected GeometricalShapes(GeometricalForm gf, int width, int height, Color color) {
+		this.xCoord = gf.getX();
+		this.yCoord = gf.getY();
 		this.width = width;
 		this.height = height;
 		this.color = new Color(color.getRed(),color.getGreen(),color.getBlue());
@@ -56,8 +68,14 @@ public abstract class GeometricalShapes implements GeometricalForm {
 	 */
 	@Override
 	public int compareTo(GeometricalForm f) {
-		// TODO Auto-generated method stub
-		return 0;
+		if (this.getArea() == f.getArea() && this.getPerimeter() == f.getPerimeter()){
+			return 0;
+		} else if (this.getArea() == f.getArea()){
+			return this.getPerimeter() - f.getPerimeter();
+		} else {
+			return this.getArea() - f.getArea();
+		}
+		
 	}
 	
 	/**
@@ -71,8 +89,7 @@ public abstract class GeometricalShapes implements GeometricalForm {
 	 */
 	@Override
 	public Color getColor() {
-		// TODO Auto-generated method stub
-		return null;
+		return new Color(color.getRed(), color.getGreen(),color.getBlue());
 	}
 	
 	/**
@@ -80,8 +97,7 @@ public abstract class GeometricalShapes implements GeometricalForm {
 	 */
 	@Override
 	public int getWidth() {
-		// TODO Auto-generated method stub
-		return 0;
+		return width;
 	}
 	
 	/**
@@ -89,8 +105,7 @@ public abstract class GeometricalShapes implements GeometricalForm {
 	 */
 	@Override
 	public int getHeight() {
-		// TODO Auto-generated method stub
-		return 0;
+		return height;
 	}
 	
 	/**
@@ -98,8 +113,7 @@ public abstract class GeometricalShapes implements GeometricalForm {
 	 */
 	@Override
 	public int getX() {
-		// TODO Auto-generated method stub
-		return 0;
+		return xCoord;
 	}
 	
 	/**
@@ -107,8 +121,7 @@ public abstract class GeometricalShapes implements GeometricalForm {
 	 */
 	@Override
 	public int getY() {
-		// TODO Auto-generated method stub
-		return 0;
+		return yCoord;
 	}
 	
 	/**
@@ -116,7 +129,12 @@ public abstract class GeometricalShapes implements GeometricalForm {
 	 */
 	@Override
 	public void move(int dx, int dy) throws IllegalPositionException {
-		// TODO Auto-generated method stub
+		if (xCoord +dx < 0 || yCoord + dy < 0){
+			throw new IllegalPositionException("New X or Y coordinates are less than 0");
+		} else {
+			xCoord += dx;
+			yCoord += dy;
+		}
 		
 	}
 	
@@ -131,8 +149,12 @@ public abstract class GeometricalShapes implements GeometricalForm {
 	 */
 	@Override
 	public void place(int x, int y) throws IllegalPositionException {
-		// TODO Auto-generated method stub
-		
+		if (x < 0 || y < 0){
+			throw new IllegalPositionException("X or Y value less than 0");
+		} else {
+			xCoord = x;
+			yCoord = y;
+		}
 	}
 
 }

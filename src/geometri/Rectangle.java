@@ -25,7 +25,7 @@ public class Rectangle extends GeometricalShapes{
 	 * @param c Color of the rectangle.
 	 */
 	public Rectangle(GeometricalForm f, int width, int height, Color c){
-		super(f.getX(), f.getY(), width, height, c);
+		super(f, width, height, c);
 	}
 	
 	/** 

@@ -15,6 +15,7 @@ public class Square extends GeometricalShapes{
 	 */
 	public Square(int x, int y, int side, Color c) throws IllegalPositionException{
 		super(x,y,side,side,c);
+		
 	}
 	/**
 	 * Creates a square at the same position as another GeometrialForm.
@@ -23,7 +24,7 @@ public class Square extends GeometricalShapes{
 	 * @param c Color of the square.
 	 */
 	public Square(GeometricalForm f, int side, Color c){
-		super(f.getX(), f.getY(), side, side, c);
+		super(f, side, side, c);
 	}
 
 	
