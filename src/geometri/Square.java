@@ -34,13 +34,23 @@ public class Square extends GeometricalShapes{
 	 */
 	@Override
 	public boolean equals(Object o){
-		return false;
+		if (o == this){
+			return true;
+		} else if (o == null){
+			return false;
+		} else if (o.getClass() == this.getClass()) {
+			Square temp = (Square)o;
+			return 	(temp.getHeight() == this.getHeight() && temp.getWidth() == this.getWidth()) 
+					|| 
+					(temp.getHeight() == this.getWidth() && temp.getWidth() == this.getHeight());
+		} else {
+			return false;
+		}
 		
 	}
 	@Override
 	public int getArea() {
-		// TODO Auto-generated method stub
-		return 0;
+		return getWidth() * getHeight();
 	}
 	@Override
 	public void fill(Graphics g) {
@@ -49,8 +59,7 @@ public class Square extends GeometricalShapes{
 	}
 	@Override
 	public int getPerimeter() {
-		// TODO Auto-generated method stub
-		return 0;
+		return 2 * (getWidth() * getHeight());
 	}
 
 }
