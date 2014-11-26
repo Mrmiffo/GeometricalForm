@@ -4,6 +4,8 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 public class Circle extends GeometricalShapes {
+
+	private final double PI_CONSTANT = 3.14;
 	/**
 	 * Created a filled circle with the given diameter at the specific coordinates.
 	 * @param x X coordinates
@@ -39,8 +41,8 @@ public class Circle extends GeometricalShapes {
 
 	@Override
 	public int getArea() {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		return (diameter*diameter*PI_CONSTANT)/4.0;
 	}
 
 	@Override
@@ -51,7 +53,7 @@ public class Circle extends GeometricalShapes {
 
 	@Override
 	public int getPerimeter() {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		return diameter*PI_CONSTANT;
 	}
 }
