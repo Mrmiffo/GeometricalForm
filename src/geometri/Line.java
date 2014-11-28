@@ -98,4 +98,8 @@ private int x1, y1, x2, y2;
 	public int getPerimeter() {
 		return (int) (Math.sqrt(getWidth() * getWidth() + getHeight() * getHeight()));
 	}
+	@Override
+	public int hashCode(){
+		return super.hashCode() + x1*1567 + x2*1571 + y1*1579 + y2*1583;
+	}
 }

@@ -66,4 +66,8 @@ public class Oval extends GeometricalShapes{
 		
 		return (int)(PI_CONSTANT*(3*(getWidth()/2.0 + getHeight()/2.0)-Math.sqrt((3*(getWidth()/2.0+getHeight()/2.0)*(getWidth()/2.0+3*(getHeight()/2.0))))));
 	}
+	@Override
+	public int hashCode(){
+		return super.hashCode()*1597;
+	}
 }

@@ -67,4 +67,8 @@ public class Circle extends GeometricalShapes {
 		
 		return (int)(getHeight()*PI_CONSTANT);
 	}
+	@Override
+	public int hashCode(){
+		return super.hashCode()*1567;
+	}
 }

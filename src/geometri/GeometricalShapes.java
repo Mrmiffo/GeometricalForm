@@ -163,5 +163,9 @@ public abstract class GeometricalShapes implements GeometricalForm {
 			yCoord = y;
 		}
 	}
+	@Override
+	public int hashCode(){
+		return xCoord*1523 + yCoord*1531 + width*1543 + height*1553+ color.hashCode()*1559;
+	}
 
 }

@@ -62,4 +62,8 @@ public class Rectangle extends GeometricalShapes{
 	public int getPerimeter() {
 		return 2 * (getWidth() + getHeight());
 	}
+	@Override
+	public int hashCode(){
+		return super.hashCode()*1607;
+	}
 }
