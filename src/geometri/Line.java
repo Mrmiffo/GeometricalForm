@@ -37,11 +37,11 @@ private int x1, y1, x2, y2;
 	}
 
 	/**
-	 * Creates
+	 * Creates a line based on the two positions given by two GeometricalForm objects and forwards everything to super
 	 * 
-	 * @param f1
-	 * @param f2
-	 * @param c
+	 * @param f1 Takes in geometricalForm as input
+	 * @param f2 Takes in geometricalForm as input
+	 * @param c Takes in a color that will be the color of the Line
 	 */
 	public Line(GeometricalForm f1, GeometricalForm f2, Color c) {
 		super(f1, f2, c);
