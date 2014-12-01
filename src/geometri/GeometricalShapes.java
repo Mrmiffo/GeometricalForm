@@ -150,10 +150,6 @@ public abstract class GeometricalShapes implements GeometricalForm {
 
 	@Override
 	public boolean equals(Object o){
-		if (o == this){
-			return true;
-		} else {
-			return false;
-		}
+		return false;
 	}
 }
