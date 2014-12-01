@@ -15,7 +15,7 @@ public class Rectangle extends GeometricalShapes{
 	 * @throws IllegalPositionException Is thrown if any of the X or Y coordinates are negative.
 	 */
 	public Rectangle(int x, int y, int width, int height, Color c) throws IllegalPositionException{
-		super(x,y,width,height,c);
+		
 	}
 	/**
 	 * Create a rectangle at the same place as another geometricalForm.
@@ -25,7 +25,7 @@ public class Rectangle extends GeometricalShapes{
 	 * @param c Color of the rectangle.
 	 */
 	public Rectangle(GeometricalForm f, int width, int height, Color c){
-		super(f, width, height, c);
+	
 	}
 	
 	/** 
@@ -35,35 +35,24 @@ public class Rectangle extends GeometricalShapes{
 	 */
 	@Override
 	public boolean equals(Object o){
-		if (o == this){
-			return true;
-		} else if (o == null){
+
 			return false;
-		} else if (o.getClass() == this.getClass()) {
-			Rectangle temp = (Rectangle)o;
-			return 	(temp.getHeight() == this.getHeight() && temp.getWidth() == this.getWidth()) 
-					|| 
-					(temp.getHeight() == this.getWidth() && temp.getWidth() == this.getHeight());
-		} else {
-			return false;
-		}
 	}
 	@Override
 	public int getArea() {
-		return getWidth() * getHeight();
+		return 0;
 	}
 	@Override
 	public void fill(Graphics g) {
-		g.setColor(getColor());
-		g.fillRect(getX(), getY(), getWidth(), getHeight());
+
 		
 	}
 	@Override
 	public int getPerimeter() {
-		return 2 * (getWidth() + getHeight());
+		return 0;
 	}
 	@Override
 	public int hashCode(){
-		return super.hashCode()*1607;
+		return 0;
 	}
 }

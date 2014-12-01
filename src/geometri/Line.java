@@ -26,14 +26,7 @@ private int x1, y1, x2, y2;
 	 *             Is thrown
 	 */
 	public Line(int x1, int y1, int x2, int y2, Color c)
-			throws IllegalPositionException {
-		
-		
-		super(Math.min(x1, x2), Math.min(y1, y2), Math.abs(x2 - x1), Math.abs(y2 - y1), c);
-		this.x1 = x1;
-		this.y1 = y1;
-		this.x2 = x2;
-		this.y2 = y2;
+
 	}
 
 	/**
@@ -44,7 +37,7 @@ private int x1, y1, x2, y2;
 	 * @param c Takes in a color that will be the color of the Line
 	 */
 	public Line(GeometricalForm f1, GeometricalForm f2, Color c) {
-		super(f1, f2, c);
+		
 	}
 
 	/**
@@ -54,7 +47,7 @@ private int x1, y1, x2, y2;
 	 */
 	
 	public int getGradient() {
-		return (int) (getHeight() / getWidth());
+		
 
 	}
 
@@ -68,16 +61,7 @@ private int x1, y1, x2, y2;
 	 */
 	@Override
 	public boolean equals(Object o) {
-		if (o == this) {
-			return true;
-		} else if (o == null) {
-			return false;
-		} else if (o.getClass() == this.getClass()) {
-			Line temp = (Line) o;
-			return (temp.getGradient() == this.getGradient() && temp.getPerimeter() == this.getPerimeter());
-		} else {
-			return false;
-		}
+		return false;
 
 	}
 
@@ -89,17 +73,16 @@ private int x1, y1, x2, y2;
 
 	@Override
 	public void fill(Graphics g) {
-		g.setColor(getColor());
-		g.drawLine(x1,y1, x2,y2);
+
 
 	}
 
 	@Override
 	public int getPerimeter() {
-		return (int) (Math.sqrt(getWidth() * getWidth() + getHeight() * getHeight()));
+		return 0;
 	}
 	@Override
 	public int hashCode(){
-		return super.hashCode() + x1*1567 + x2*1571 + y1*1579 + y2*1583;
+		return 0;
 	}
 }

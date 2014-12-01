@@ -17,7 +17,7 @@ public class Circle extends GeometricalShapes {
 	
 
 	public Circle(int x, int y, int diameter, Color c) throws IllegalPositionException{
-		super(x,y,diameter,diameter,c);
+		
 	}
 	 
 	/**
@@ -27,7 +27,7 @@ public class Circle extends GeometricalShapes {
 	 * @param c Color of the circle.
 	 */
 	public Circle(GeometricalForm f, int diameter, Color c){
-		 super(f,diameter,diameter,c);
+		
 	}
 	
 	/** 
@@ -37,38 +37,28 @@ public class Circle extends GeometricalShapes {
 	 */
 	@Override
 	public boolean equals(Object o){
-		if (o == this){
-			return true;
-		} else if (o == null){
-			return false;
-		} else if (o.getClass() == this.getClass()) {
-			Circle temp = (Circle)o;
-			return 	(temp.getHeight() == this.getHeight());
-		} else {
-			return false;
-		}
+		return false;
 		
 	}
 
 	@Override
 	public int getArea() {
 		
-		return (int)((getHeight()*getHeight()*PI_CONSTANT)/4.0);
+		return 0;
 	}
 
 	@Override
 	public void fill(Graphics g) {
-		g.setColor(getColor());
-		g.fillOval(getX(), getY(), getWidth(), getHeight());
+
 	}
 
 	@Override
 	public int getPerimeter() {
 		
-		return (int)(getHeight()*PI_CONSTANT);
+		return 0;
 	}
 	@Override
 	public int hashCode(){
-		return super.hashCode()*1567;
+		return 0;
 	}
 }

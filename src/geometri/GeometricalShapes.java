@@ -39,15 +39,7 @@ public abstract class GeometricalShapes implements GeometricalForm {
 	 * @param color
 	 */
 	protected GeometricalShapes(int xCoord, int yCoord, int width, int height, Color color) throws IllegalPositionException{
-		if (xCoord < 0 || yCoord < 0){
-			throw new IllegalPositionException("X or Y coordinates are less than 0");
-		} else {
-			this.xCoord = xCoord;
-			this.yCoord = yCoord;
-			this.width = width;
-			this.height = height;
-			this.color = new Color(color.getRed(),color.getGreen(),color.getBlue());
-		}
+
 	}
 	/**
 	 * Constructor which will create a GeometricalForm at the same position as another GeometricalForm.
@@ -57,11 +49,7 @@ public abstract class GeometricalShapes implements GeometricalForm {
 	 * @param color Color of the new form.
 	 */
 	protected GeometricalShapes(GeometricalForm gf, int width, int height, Color color) {
-		this.xCoord = gf.getX();
-		this.yCoord = gf.getY();
-		this.width = width;
-		this.height = height;
-		this.color = new Color(color.getRed(),color.getGreen(),color.getBlue());
+
 	}
 	
 	/**
@@ -71,10 +59,7 @@ public abstract class GeometricalShapes implements GeometricalForm {
 	 * @param color Color of the new form.
 	 */
 	public GeometricalShapes(GeometricalForm f1, GeometricalForm f2, Color color){
-		width = Math.abs(f1.getX()-f1.getX());
-		height = Math.abs(f1.getY()-f1.getY());
-		
-		
+
 	}
 	
 	@Override
@@ -82,14 +67,7 @@ public abstract class GeometricalShapes implements GeometricalForm {
 	
 	@Override
 	public int compareTo(GeometricalForm f) {
-		if (this.getArea() == f.getArea() && this.getPerimeter() == f.getPerimeter()){
-			return 0;
-		} else if (this.getArea() == f.getArea()){
-			return this.getPerimeter() - f.getPerimeter();
-		} else {
-			return this.getArea() - f.getArea();
-		}
-		
+		return 0;
 	}
 	
 	@Override
@@ -97,38 +75,32 @@ public abstract class GeometricalShapes implements GeometricalForm {
 	
 	@Override
 	public Color getColor() {
-		return new Color(color.getRed(), color.getGreen(),color.getBlue());
+		return color;
 	}
 	
 	@Override
 	public int getWidth() {
-		return width;
+		return 0;
 	}
 	
 	@Override
 	public int getHeight() {
-		return height;
+		return 0;
 	}
 	
 	@Override
 	public int getX() {
-		return xCoord;
+		return 0;
 	}
 	
 	@Override
 	public int getY() {
-		return yCoord;
+		return 0;
 	}
 	
 	@Override
 	public void move(int dx, int dy) throws IllegalPositionException {
-		if (xCoord +dx < 0 || yCoord + dy < 0){
-			throw new IllegalPositionException("New X or Y coordinates are less than 0");
-		} else {
-			xCoord += dx;
-			yCoord += dy;
-		}
-		
+
 	}
 	
 	@Override
@@ -136,16 +108,11 @@ public abstract class GeometricalShapes implements GeometricalForm {
 	
 	@Override
 	public void place(int x, int y) throws IllegalPositionException {
-		if (x < 0 || y < 0){
-			throw new IllegalPositionException("X or Y value less than 0");
-		} else {
-			xCoord = x;
-			yCoord = y;
-		}
+
 	}
 	@Override
 	public int hashCode(){
-		return xCoord*1523 + yCoord*1531 + width*1543 + height*1553+ color.hashCode()*1559;
+		return 0;
 	}
 
 	@Override
