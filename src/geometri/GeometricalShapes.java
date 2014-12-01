@@ -76,15 +76,10 @@ public abstract class GeometricalShapes implements GeometricalForm {
 		
 		
 	}
-	/**
-	 * {@inheritDoc}
-	 */
+	
 	@Override
 	public abstract int getArea();
 	
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
 	public int compareTo(GeometricalForm f) {
 		if (this.getArea() == f.getArea() && this.getPerimeter() == f.getPerimeter()){
@@ -97,55 +92,34 @@ public abstract class GeometricalShapes implements GeometricalForm {
 		
 	}
 	
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
 	public abstract void fill(Graphics g);
 	
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
 	public Color getColor() {
 		return new Color(color.getRed(), color.getGreen(),color.getBlue());
 	}
 	
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
 	public int getWidth() {
 		return width;
 	}
 	
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
 	public int getHeight() {
 		return height;
 	}
 	
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
 	public int getX() {
 		return xCoord;
 	}
 	
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
 	public int getY() {
 		return yCoord;
 	}
 	
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
 	public void move(int dx, int dy) throws IllegalPositionException {
 		if (xCoord +dx < 0 || yCoord + dy < 0){
@@ -157,15 +131,9 @@ public abstract class GeometricalShapes implements GeometricalForm {
 		
 	}
 	
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
 	public abstract int getPerimeter();
 	
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
 	public void place(int x, int y) throws IllegalPositionException {
 		if (x < 0 || y < 0){
@@ -180,4 +148,12 @@ public abstract class GeometricalShapes implements GeometricalForm {
 		return xCoord*1523 + yCoord*1531 + width*1543 + height*1553+ color.hashCode()*1559;
 	}
 
+	@Override
+	public boolean equals(Object o){
+		if (o == this){
+			return true;
+		} else {
+			return false;
+		}
+	}
 }
