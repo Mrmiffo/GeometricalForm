@@ -4,11 +4,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 public class Line extends GeometricalShapes {
-	/**
-	 * gradientLine is set to an int to avoid issues which might occur with
-	 * accuracy when using double.
-	 */
-private int x1, y1, x2, y2;
+
 	/**
 	 * Creates a line between two coordinates.
 	 * 

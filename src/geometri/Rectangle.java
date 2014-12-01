@@ -36,7 +36,7 @@ public class Rectangle extends GeometricalShapes{
 	@Override
 	public boolean equals(Object o){
 
-			return false;
+		return false;
 	}
 	@Override
 	public int getArea() {
