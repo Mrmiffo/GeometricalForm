@@ -28,26 +28,6 @@ public class Rectangle extends GeometricalShapes{
 		super(f, width, height, c);
 	}
 	
-	/** 
-	 * The equals method decides if the two objects are equal
-	 * @param An object to compare with.
-	 * @return Returns true if the two objects have the same width, height and type.
-	 */
-	@Override
-	public boolean equals(Object o){
-		if (o == this){
-			return true;
-		} else if (o == null){
-			return false;
-		} else if (o.getClass() == this.getClass()) {
-			Rectangle temp = (Rectangle)o;
-			return 	(temp.getHeight() == this.getHeight() && temp.getWidth() == this.getWidth()) 
-					|| 
-					(temp.getHeight() == this.getWidth() && temp.getWidth() == this.getHeight());
-		} else {
-			return false;
-		}
-	}
 	@Override
 	public int getArea() {
 		return getWidth() * getHeight();

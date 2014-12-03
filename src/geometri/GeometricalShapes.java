@@ -150,8 +150,16 @@ public abstract class GeometricalShapes implements GeometricalForm {
 
 	@Override
 	public boolean equals(Object o){
-		if (o == this){
-			return true;
+		if (o == null){
+			return false;
+		}
+		else if (o instanceof GeometricalShapes){
+			GeometricalShapes temp = (GeometricalShapes) o;
+			return ((temp.getWidth() == this.getWidth() && temp.getHeight() == this.getHeight())
+					||
+					(temp.getWidth() == this.getHeight() && temp.getHeight() == this.getWidth())
+					) && o.getClass() == this.getClass() && temp.getColor().equals(this.getColor());
+			
 		} else {
 			return false;
 		}

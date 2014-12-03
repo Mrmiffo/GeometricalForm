@@ -29,26 +29,6 @@ public class Circle extends GeometricalShapes {
 	public Circle(GeometricalForm f, int diameter, Color c){
 		 super(f,diameter,diameter,c);
 	}
-	
-	/** 
-	 * The equals method decides if the two objects are equal
-	 * @param An object to compare with.
-	 * @return Returns true if the two objects have the same width, height and type.
-	 */
-	@Override
-	public boolean equals(Object o){
-		if (o == this){
-			return true;
-		} else if (o == null){
-			return false;
-		} else if (o.getClass() == this.getClass()) {
-			Circle temp = (Circle)o;
-			return 	(temp.getHeight() == this.getHeight());
-		} else {
-			return false;
-		}
-		
-	}
 
 	@Override
 	public int getArea() {
