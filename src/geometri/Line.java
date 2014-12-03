@@ -8,7 +8,7 @@ public class Line extends GeometricalShapes {
 	 * gradientLine is set to an int to avoid issues which might occur with
 	 * accuracy when using double.
 	 */
-private int x1, y1, x2, y2;
+	private boolean check;
 	/**
 	 * Creates a line between two coordinates.
 	 * 
@@ -27,13 +27,14 @@ private int x1, y1, x2, y2;
 	 */
 	public Line(int x1, int y1, int x2, int y2, Color c)
 			throws IllegalPositionException {
-		
-		
 		super(Math.min(x1, x2), Math.min(y1, y2), Math.abs(x2 - x1), Math.abs(y2 - y1), c);
-		this.x1 = x1;
-		this.y1 = y1;
-		this.x2 = x2;
-		this.y2 = y2;
+		if(x1 >=x2 && y1>=y2){
+			check = true;	
+		}else{
+			check = false;
+		}
+		
+		
 	}
 
 	/**
@@ -53,8 +54,8 @@ private int x1, y1, x2, y2;
 	 * @return The gradient of the line as an int.
 	 */
 	
-	public int getGradient() {
-		return (int) (getHeight() / getWidth());
+	public boolean getGradient() {
+		return check;
 
 	}
 
@@ -86,11 +87,16 @@ private int x1, y1, x2, y2;
 
 		return 0;
 	}
-
+	
 	@Override
 	public void fill(Graphics g) {
 		g.setColor(getColor());
-		g.drawLine(x1,y1, x2,y2);
+		if(check){
+			g.drawLine(getX(), getY()+getHeight(), getX()+getWidth(), getY());
+		}else{
+			g.drawLine(getX(), getY(), getX()+getWidth(), getY()+getHeight());
+		}
+	//	g.drawLine(x1,y1, x2,y2);
 
 	}
 
@@ -100,6 +106,6 @@ private int x1, y1, x2, y2;
 	}
 	@Override
 	public int hashCode(){
-		return super.hashCode() + x1*1567 + x2*1571 + y1*1579 + y2*1583;
+		return super.hashCode() + getX()*1567 + (getX()+getWidth())*1571 + getY()*1579 + (getY()+getHeight())*1583;
 	}
 }
