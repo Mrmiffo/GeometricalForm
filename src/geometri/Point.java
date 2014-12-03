@@ -23,26 +23,8 @@ public class Point extends GeometricalShapes{
 		super(f,0,0,c);
 		
 	}
-	
-	/** 
-	 * The equals method decides if the two objects are equal
-	 * @param An object to compare with.
-	 * @return Returns true if the two objects have the same width, height and type.
-	 */
-	@Override
-	public boolean equals(Object o){
-		if (o == this){
-			return true;
-		} else if (o == null){
-			return false;
-		} else if (o.getClass() == this.getClass()) {
-			Point temp = (Point)o;
-			return 	(temp.getX() == this.getX() && temp.getY() == temp.getY());
-		} else {
-			return false;
-		}
+
 		
-	}
 	@Override
 	public int getArea() {
 		return 0;

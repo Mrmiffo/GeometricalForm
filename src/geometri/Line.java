@@ -28,7 +28,7 @@ public class Line extends GeometricalShapes {
 	public Line(int x1, int y1, int x2, int y2, Color c)
 			throws IllegalPositionException {
 		super(Math.min(x1, x2), Math.min(y1, y2), Math.abs(x2 - x1), Math.abs(y2 - y1), c);
-		if(x1 >=x2 && y1>=y2){
+		if(y1>=y2){
 			check = true;	
 		}else{
 			check = false;
@@ -46,6 +46,11 @@ public class Line extends GeometricalShapes {
 	 */
 	public Line(GeometricalForm f1, GeometricalForm f2, Color c) {
 		super(f1, f2, c);
+		if(f1.getY()>=f2.getY()){
+			check = true;	
+		}else{
+			check = false;
+		}
 	}
 
 	/**
@@ -69,13 +74,9 @@ public class Line extends GeometricalShapes {
 	 */
 	@Override
 	public boolean equals(Object o) {
-		if (o == this) {
-			return true;
-		} else if (o == null) {
-			return false;
-		} else if (o.getClass() == this.getClass()) {
+		if (super.equals(o)) {
 			Line temp = (Line) o;
-			return (temp.getGradient() == this.getGradient() && temp.getPerimeter() == this.getPerimeter());
+			return temp.getGradient() == this.getGradient();
 		} else {
 			return false;
 		}
