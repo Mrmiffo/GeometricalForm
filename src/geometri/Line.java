@@ -5,8 +5,8 @@ import java.awt.Graphics;
 
 public class Line extends GeometricalShapes {
 	/**
-	 * gradientLine is set to an int to avoid issues which might occur with
-	 * accuracy when using double.
+	 * check variable checks whether the line goes "up" or "down", true if up.
+	 * 
 	 */
 	private boolean check;
 	/**
@@ -54,9 +54,9 @@ public class Line extends GeometricalShapes {
 	}
 
 	/**
-	 * Will return the gradient of the line as an int.
+	 * Will return true if the line "points" up and false if "down"
 	 * 
-	 * @return The gradient of the line as an int.
+	 * @return The gradient of the line as a boolean.
 	 */
 	
 	public boolean getGradient() {
@@ -67,8 +67,7 @@ public class Line extends GeometricalShapes {
 	/**
 	 * The equals method decides if the two objects are equal
 	 * 
-	 * @param An
-	 *            object to compare with.
+	 * @param An object to compare with.
 	 * @return Returns true if the two objects have the same width, height and
 	 *         type.
 	 */

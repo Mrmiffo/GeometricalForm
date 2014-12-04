@@ -66,18 +66,15 @@ public abstract class GeometricalShapes implements GeometricalForm {
 	
 	/**
 	 * Constructor which will create a GeometricalForm with the width set to the difference in X coordinates between two other shapes, and the height set to the difference in Y coordinates between the two shapes.
-	 * X and Y coordinates will be the same as of the first GeometricalForm.
 	 * @param f1 First GeometricalForm.
 	 * @param f2 Second GeometricalForm
 	 * @param color Color of the new form.
 	 */
 	public GeometricalShapes(GeometricalForm f1, GeometricalForm f2, Color color){
-		xCoord = f1.getX();
-		yCoord = f1.getY();
 		width = Math.abs(f1.getX()-f2.getX());
 		height = Math.abs(f1.getY()-f2.getY());
-		this.color = new Color(color.getRed(),color.getGreen(),color.getBlue());
-
+		
+		
 	}
 	
 	@Override
@@ -153,14 +150,8 @@ public abstract class GeometricalShapes implements GeometricalForm {
 
 	@Override
 	public boolean equals(Object o){
-		if (o == null){
-			return false;
-		}
-		else if (o instanceof GeometricalShapes){
-			GeometricalShapes temp = (GeometricalShapes) o;
-			return (temp.getWidth() == this.getWidth() && temp.getHeight() == this.getHeight())
-					&& o.getClass() == this.getClass() && temp.getColor().equals(this.getColor());
-			
+		if (o == this){
+			return true;
 		} else {
 			return false;
 		}
