@@ -19,7 +19,7 @@ public class TestClassGeometri {
 		Line q = new Line(a,b,Color.RED);
 		Line w = new Line (20,40,0,0,Color.RED);
 		
-		System.out.println(q.getGradient()+","+w.getGradient());
+		System.out.println(q.isPointedUp()+","+w.isPointedUp());
 		
 		System.out.println(q.equals(w));
 		System.out.println(q.getWidth() + " " + q.getHeight());

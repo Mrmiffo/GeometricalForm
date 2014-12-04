@@ -59,7 +59,7 @@ public class Line extends GeometricalShapes {
 	 * @return The gradient of the line as a boolean.
 	 */
 	
-	public boolean getGradient() {
+	public boolean isPointedUp() {
 		return check;
 
 	}
@@ -75,7 +75,7 @@ public class Line extends GeometricalShapes {
 	public boolean equals(Object o) {
 		if (super.equals(o)) {
 			Line temp = (Line) o;
-			return temp.getGradient() == this.getGradient();
+			return temp.isPointedUp() == this.isPointedUp();
 		} else {
 			return false;
 		}
