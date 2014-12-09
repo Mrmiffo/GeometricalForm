@@ -106,6 +106,6 @@ public class Line extends GeometricalShapes {
 	}
 	@Override
 	public int hashCode(){
-		return super.hashCode() + getX()*1567 + (getX()+getWidth())*1571 + getY()*1579 + (getY()+getHeight())*1583;
+		return super.hashCode() + ((Boolean)check).hashCode() * 577;
 	}
 }

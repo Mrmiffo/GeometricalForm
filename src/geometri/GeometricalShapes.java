@@ -73,7 +73,9 @@ public abstract class GeometricalShapes implements GeometricalForm {
 	public GeometricalShapes(GeometricalForm f1, GeometricalForm f2, Color color){
 		width = Math.abs(f1.getX()-f2.getX());
 		height = Math.abs(f1.getY()-f2.getY());
-		
+		this.color = color;
+		this.xCoord = f1.getX();
+		this.yCoord = f1.getY();
 		
 	}
 	
@@ -145,7 +147,7 @@ public abstract class GeometricalShapes implements GeometricalForm {
 	}
 	@Override
 	public int hashCode(){
-		return xCoord*1523 + yCoord*1531 + width*1543 + height*1553+ color.hashCode()*1559;
+		return width*1543 + height*1553+ color.hashCode()*1559;
 	}
 
 	@Override
